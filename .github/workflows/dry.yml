@@ -30,17 +30,15 @@ jobs:
 
       - name: publish                          // 发布 npm 包
         if: ${{contains(github.ref, 'refs/tags/')}}  // 如果有新 tag
+        env:
+          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
         run: |
           yarn build
           yarn build:types
-        run: yarn publish
-        env:
-          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
-
+          yarn publish
+          yarn docs:build
       - name: deploy                          // 发布文档
         if: ${{contains(github.ref, 'refs/tags/')}}
-        run: |
-          yarn docs:build
         uses: JamesIves/github-pages-deploy-action@4.1.1
         with:
           branch: gh-pages # The branch the action should deploy to.
