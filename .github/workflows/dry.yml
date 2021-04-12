@@ -1,14 +1,15 @@
 name: dry
+
 on:
-  # 在 main 分支上 push 或者 pull request 时触发
   push:
-    branches:
+    branches: # 在 main 分支上 push 或者 pull request 时触发
       - main
   pull_request:
     branches:
       - main
   # 或者手动触发
   workflow_dispatch:       // 设置手动触发，参考文档 https://github.blog/changelog/2020-07-06-github-actions-manual-triggers-with-workflow_dispatch/
+
 jobs:
   build:
     runs-on: ubuntu-18.04
