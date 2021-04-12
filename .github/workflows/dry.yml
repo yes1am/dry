@@ -21,24 +21,26 @@ jobs:
           persist-credentials: false # otherwise, the token used is the GITHUB_TOKEN, instead of your personal token
           fetch-depth: 0 # otherwise, you will failed to push refs to dest repo
 
-      - uses: actions/setup-node@v2  # 该 workflows，会建立 node 环境，便于我们执行 node 脚本
+      - uses: actions/setup-node@v1  # 该 workflows，会建立 node 环境，便于我们执行 node 脚本
         with:
           registry-url: 'https://registry.npmjs.org'
-
+          always-auth: true
+      - uses: c-hive/gha-yarn-cache@v1   # 缓存 yarn
       - name: check code   # 检查代码
         run: |
           yarn
           yarn lint
           yarn test
 
+      - run: echo "//registry.npmjs.org/:_authToken=${{ secrets.NPM_TOKEN }}" > ~/.npmrc
       - name: publish                          # 发布 npm 包
         if: ${{contains(github.ref, 'refs/tags/')}}  # 如果有新 tag
         env:
-          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
+          NPM_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
         run: |
           yarn build
           yarn build:types
-          yarn publish
+          yarn publish --access public
           yarn docs:build
       - name: deploy                          # 发布文档
         if: ${{contains(github.ref, 'refs/tags/')}}
