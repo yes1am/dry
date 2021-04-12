@@ -40,8 +40,8 @@ jobs:
         run: |
           yarn build
           yarn build:types
-          yarn publish --access public
           yarn docs:build
+          yarn publish --access public
       - name: deploy                          # 发布文档
         if: ${{contains(github.ref, 'refs/tags/')}}
         uses: JamesIves/github-pages-deploy-action@4.1.1
