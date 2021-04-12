@@ -2,7 +2,7 @@ name: dry
 on:
   # 在 main 分支上 push 或者 pull request 时触发
   push:
-    branchs:
+    branches:
       - main
   pull_request:
     branches:
