@@ -2,6 +2,6 @@
 
 **数据结构**
 
-- [Queue](/api/queue)
-- [Stack](/api/stack)
-- [Day](/api/day)
+- [Queue](/dry/api/queue)
+- [Stack](/dry/api/stack)
+- [Day](/dry/api/day)
