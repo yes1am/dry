@@ -1,6 +1,6 @@
 {
   "name": "@songjp/dry",
-  "version": "0.0.8",
+  "version": "0.0.9",
   "description": "Personal JavaScript Utils, dry means Don't Repeat Yourself",
   "main": "lib/bundle.cjs.js",
   "module": "lib/bundle.esm.js",
