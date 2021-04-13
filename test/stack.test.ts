@@ -1,4 +1,4 @@
-import { Stack } from '../packages/index'
+import { Stack } from '../src/index'
 
 describe('Stack', () => {
   test('Stack Methods', () => {

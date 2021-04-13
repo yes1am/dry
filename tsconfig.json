@@ -67,9 +67,15 @@
     /* Advanced Options */
     "skipLibCheck": true,                           /* Skip type checking of declaration files. */
     "forceConsistentCasingInFileNames": true,        /* Disallow inconsistently-cased references to the same file. */
-
     // 只生成类型
     "declaration": true,
     "emitDeclarationOnly": true,
-  }
+  },
+  // 只编译 src 目录下的文件
+  "include": [
+    "src"
+  ],
+  "exclude": [
+    "test"
+  ]
 }

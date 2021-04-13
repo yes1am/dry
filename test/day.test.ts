@@ -1,4 +1,4 @@
-import { day } from '../packages/index'
+import { day } from '../src/index'
 
 describe('day', () => {
   test('day Methods', () => {

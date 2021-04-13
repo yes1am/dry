@@ -2,8 +2,6 @@ name: dry
 
 on:
   push:
-    branches: # 在 main 分支上 push 或者 pull request 时触发
-      - main
     tags: 
       - '*'           # Push events to every tag not containing /
   pull_request:
@@ -16,12 +14,12 @@ jobs:
   build:
     runs-on: ubuntu-18.04
     steps:
-      - uses: actions/checkout@v2   # 该 workflows，将我们提交的代码 checkout (拷贝) 一份出来
+      - uses: actions/checkout@v2   # 将我们提交的代码 checkout (拷贝) 一份出来
         with:
           persist-credentials: false # otherwise, the token used is the GITHUB_TOKEN, instead of your personal token
           fetch-depth: 0 # otherwise, you will failed to push refs to dest repo
 
-      - uses: actions/setup-node@v1  # 该 workflows，会建立 node 环境，便于我们执行 node 脚本
+      - uses: actions/setup-node@v1  # 会建立 node 环境，便于我们执行 node 脚本
       - uses: actions/cache@v2
         with:
           path: ~/.npm

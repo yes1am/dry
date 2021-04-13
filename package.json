@@ -1,22 +1,31 @@
 {
   "name": "@songjp/dry",
   "version": "0.0.8",
-  "description": "",
+  "description": "Personal JavaScript Utils, dry means Don't Repeat Yourself",
   "main": "lib/bundle.cjs.js",
   "module": "lib/bundle.esm.js",
   "browser": "lib/bundle.browser.js",
   "types": "types/index.d.ts",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/yes1am/dry"
+  },
+  "files": [
+    "src",
+    "types",
+    "lib"
+  ],
   "scripts": {
     "test": "jest",
     "build": "rollup -c",
     "build:types": "tsc",
-    "lint": "eslint packages/**",
+    "lint": "eslint src/**",
     "docs:dev": "vuepress dev docs",
     "docs:build": "vuepress build docs",
     "prepare": "husky install",
     "changelog": "conventional-changelog -p angular -i CHANGELOG.md -s -r 0"
   },
-  "author": "",
+  "author": "songjp1996@gmail.com",
   "license": "ISC",
   "devDependencies": {
     "@commitlint/cli": "^12.1.1",

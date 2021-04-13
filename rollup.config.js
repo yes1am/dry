@@ -10,7 +10,7 @@ if(typeof window !== 'undefined') {
 }`
 
 export default {
-  input: './packages/index.ts',
+  input: './src/index.ts',
   output: [
     {
       file: pkg.main,

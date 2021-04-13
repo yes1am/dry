@@ -1,4 +1,4 @@
-import { Queue } from '../packages/index'
+import { Queue } from '../src/index'
 
 describe('Queue', () => {
   test('Queue Methods', () => {
