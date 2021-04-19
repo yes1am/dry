@@ -1,3 +1,5 @@
+[使用 rollup 打造自己的 npm 包 (全流程)](https://juejin.cn/post/6950557086916804645)
+
 # @songjp/dry
 
 Personal JavaScript Utils, dry means `Don't Repeat Yourself`
